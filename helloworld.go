@@ -26,7 +26,7 @@ func main()  {
 		fmt.Println("hahahaha")
 
 	}
-	var c *string = &b
+	var c = &b
 	fmt.Println(c)
 	fmt.Println(os.Getpid())
 	var intPtr *int
@@ -34,10 +34,10 @@ func main()  {
 		fmt.Println("int_prt init value is %x", intPtr)
 	}
 
-	var slice_ []int = make([]int, 5, 10)
+	var slice_ = make([]int, 5, 10)
 	fmt.Println(slice_)
 
-	var map1 map[string]string = make(map[string]string)
+	var map1 = make(map[string]string)
 	map1["foo"] = "bar"
 	map1["hello"] = "world"
 
