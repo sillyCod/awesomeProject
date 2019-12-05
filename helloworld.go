@@ -1,7 +1,8 @@
 package main
 
 import "fmt"
-import "os"
+import ("os"
+"time")
 
 func main() {
 	fmt.Println("Hello, world!")
@@ -10,7 +11,7 @@ func main() {
 	}
 	var i = 0
 	var t chan int
-	var j int
+	//var j int
 	b := "WTF"
 	fmt.Println(&b)
 	print(&i)
@@ -18,9 +19,16 @@ func main() {
 		fmt.Println(i)
 	}
 	fmt.Println(b)
+	go func () {
+		fmt.Println("before executed!")
+		t<- 1
+		fmt.Println("I'm executed")
+	}()
+
+	time.Sleep(5 * time.Second)
 
 	select {
-	case t <- j:
+	case <-t:
 		fmt.Println("i is less than 10")
 	default:
 		fmt.Println("hahahaha")
