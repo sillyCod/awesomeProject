@@ -3,7 +3,7 @@ package main
 import "fmt"
 import "os"
 
-func main()  {
+func main() {
 	fmt.Println("Hello, world!")
 	if true {
 		fmt.Println("Hello, world")
@@ -13,9 +13,9 @@ func main()  {
 	var j int
 	b := "WTF"
 	fmt.Println(&b)
-	for i < 10 {
+	print(&i)
+	for i = 0; i < 10; i++ {
 		fmt.Println(i)
-		i++
 	}
 	fmt.Println(b)
 
@@ -30,8 +30,11 @@ func main()  {
 	fmt.Println(c)
 	fmt.Println(os.Getpid())
 	var intPtr *int
+	intPtr = &i
 	if intPtr == nil {
 		fmt.Println("int_prt init value is %x", intPtr)
+	} else {
+		fmt.Println("Hahhahahahhh")
 	}
 
 	var slice_ = make([]int, 5, 10)
@@ -41,6 +44,8 @@ func main()  {
 	map1["foo"] = "bar"
 	map1["hello"] = "world"
 
+	fmt.Println(len(map1), map1)
+
 	fmt.Println(map1)
 	const (
 		num1 = iota
@@ -49,7 +54,16 @@ func main()  {
 		num4 = "Hello"
 		num5
 		num6 = iota
-
 	)
 	fmt.Println(num1, num2, num3, num4, num5, num6)
+	fmt.Println(string(add(8, 61)))
+	fmt.Println(concat("W", "W"))
+}
+
+func add(x int, y int) int {
+	return x + y
+}
+
+func concat(a string, b string) string {
+	return a + b
 }
