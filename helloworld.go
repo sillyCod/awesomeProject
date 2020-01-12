@@ -1,8 +1,11 @@
 package main
 
 import "fmt"
-import ("os"
-"time")
+import (
+	"./def"
+	"os"
+	"time"
+)
 
 func main() {
 	fmt.Println("Hello, world!")
@@ -66,6 +69,8 @@ func main() {
 	fmt.Println(num1, num2, num3, num4, num5, num6)
 	fmt.Println(string(add(8, 61)))
 	fmt.Println(concat("W", "W"))
+	assertType(1, "hello")
+	loadTest()
 }
 
 func add(x int, y int) int {
@@ -74,4 +79,21 @@ func add(x int, y int) int {
 
 func concat(a string, b string) string {
 	return a + b
+}
+
+
+func assertType(args ...interface{}) {
+	for _, arg := range args {
+		switch arg.(type) {
+		case int:
+			//fmt.Println(index)
+			fmt.Println(arg, "is int")
+		default:
+			fmt.Println("Nothing")
+		}
+	}
+}
+
+func loadTest()  {
+	def.FuncTest()
 }
